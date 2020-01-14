@@ -159,3 +159,4 @@ yarn-error.log*
 file.log
 token.pickle
 new_database
+node_modules
