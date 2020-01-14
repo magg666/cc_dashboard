@@ -158,3 +158,4 @@ yarn-error.log*
 .idea
 file.log
 token.pickle
+new_database
