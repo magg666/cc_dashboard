@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.866e9a0f.chunk.css",
+    "main.js": "/static/js/main.9a03921d.chunk.js",
+    "main.js.map": "/static/js/main.9a03921d.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.20953027.js",
+    "runtime-main.js.map": "/static/js/runtime-main.20953027.js.map",
+    "static/css/2.17e5ed98.chunk.css": "/static/css/2.17e5ed98.chunk.css",
+    "static/js/2.cf4fe43e.chunk.js": "/static/js/2.cf4fe43e.chunk.js",
+    "static/js/2.cf4fe43e.chunk.js.map": "/static/js/2.cf4fe43e.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.ab6867298a05c71804970eb9fcb72404.js": "/precache-manifest.ab6867298a05c71804970eb9fcb72404.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.17e5ed98.chunk.css.map": "/static/css/2.17e5ed98.chunk.css.map",
+    "static/css/main.866e9a0f.chunk.css.map": "/static/css/main.866e9a0f.chunk.css.map",
+    "static/js/2.cf4fe43e.chunk.js.LICENSE": "/static/js/2.cf4fe43e.chunk.js.LICENSE",
+    "static/media/codecool-logo.png": "/static/media/codecool-logo.e7c6c026.png",
+    "static/media/weather-icons.min.css": "/static/media/weathericons-regular-webfont.ecaf8b48.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.20953027.js",
+    "static/css/2.17e5ed98.chunk.css",
+    "static/js/2.cf4fe43e.chunk.js",
+    "static/css/main.866e9a0f.chunk.css",
+    "static/js/main.9a03921d.chunk.js"
+  ]
+}
