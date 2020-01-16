@@ -17,9 +17,16 @@ export default class ColumnBarWithData extends Component {
 
     // load data on mounting
     componentDidMount() {
-        this.loadData().catch(
-            err => console.log(err)
-        );
+        this.timer = setInterval(() => {
+            this.loadData()
+                .catch(err => console.log(err)
+                );
+        },60000);
+
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timer)
     }
 
     async loadData() {

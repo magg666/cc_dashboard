@@ -47,11 +47,14 @@ export const Celebration = () => {
 
 
     useEffect(() => {
-        const fetchData = async () => {
-            const result = await axios(process.env.REACT_APP_CELEBRANTS);
-            setStudents(result.data);
-        };
-        fetchData().catch(err => console.log(err));
+        const interval = setInterval(() => {
+            const fetchData = async () => {
+                const result = await axios(process.env.REACT_APP_CELEBRANTS);
+                setStudents(result.data);
+            };
+            fetchData().catch(err => console.log(err));
+        },60000);
+        return () => clearInterval(interval);
     }, []);
 
     let celebrationOptions = ((value, index) => {

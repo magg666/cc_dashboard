@@ -28,6 +28,7 @@ class GetWeeklyStatistic(CronJobBase):
                 additions = data['weeks'][last_week_index]['a']
                 deletions = data['weeks'][last_week_index]['d']
                 commits = data['weeks'][last_week_index]['c']
+                print(data)
 
                 WeeklyStatistic.objects.update_or_create(repository_id=repository_id,
                                                          contributor=contributor,

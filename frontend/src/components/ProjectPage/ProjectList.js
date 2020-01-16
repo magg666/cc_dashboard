@@ -46,11 +46,22 @@ export default class ProjectList extends Component {
     }
 
     componentDidMount() {
-        this.loadProjects()
-            .catch(err => {
-                console.log(err);
-                this.setState({serverError: true});
-            })
+        this.loadProjects().catch(err => {
+            console.log(err)
+                this.setState({serverError: true})}
+            )
+        this.timer = setInterval(() => {
+            this.loadProjects()
+                .catch(err => {
+                    console.log(err);
+                    this.setState({serverError: true});
+                })
+        }, 60000)
+
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timer)
     }
 
     render() {

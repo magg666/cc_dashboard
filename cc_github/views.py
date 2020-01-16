@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
-from .models import Module
-from .serializers import WeekSerializer, TotalSerializer
+from .models import Module, Repository
+from .serializers import WeekSerializer, TotalSerializer, WeekProjectsSerializer
 
 
 class RepositoryWeekViewSet(viewsets.ModelViewSet):

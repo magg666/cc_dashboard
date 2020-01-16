@@ -107,7 +107,7 @@ class WeekProjectsSerializer(serializers.ModelSerializer):
 
 
 class WeekSerializer(serializers.ModelSerializer):
-    qs = get_current_repositories()
+    qs = Repository.objects.all()
     projects = WeekProjectsSerializer(instance=qs, many=True, read_only=True)
     module = serializers.SerializerMethodField()
 

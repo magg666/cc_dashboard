@@ -26,9 +26,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -107,8 +107,8 @@ DATABASES = {
 }
 
 CRON_CLASSES = [
-    "cc_github.tasks.GetWeeklyStatistic",
-    "cc_github.tasks.GetTotalStatistic",
+    "cc_github.cron.GetWeeklyStatistic",
+    "cc_github.cron.GetTotalStatistic",
 ]
 
 # Password validation
@@ -144,6 +144,7 @@ USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
+STATIC_ROOT = 'static'
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
