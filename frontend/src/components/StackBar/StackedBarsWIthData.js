@@ -17,6 +17,7 @@ export default class StackBarWithData extends Component {
 
     // load data on mounting
     componentDidMount() {
+        this.loadData().catch(err => console.log(err))
         this.timer = setInterval(() => {
             this.loadData()
                 .catch(err => console.log(err)

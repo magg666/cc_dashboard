@@ -62,6 +62,7 @@ class WeatherWidget extends React.Component {
 
     // checks weather on mounting
     componentDidMount() {
+        this.getCurrentWeather();
         this.timer = setInterval(() => {
             this.getCurrentWeather();
         }, 60000)
