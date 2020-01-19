@@ -72,10 +72,10 @@ export class Captions {
     static getCaption(eventName, remainingTime) {
         let captions = {
             startWork: `We are starting soon! ${remainingTime} left to 09:00`,
-            morning: `Welcome CodeCoolers! Only ${remainingTime} left to break!`,
-            breakTime: `Eat fast! Only ${remainingTime} left to end of dinner!`,
-            endWork: `Almost done! Only ${remainingTime} left to the end of torment!`,
-            freeTime: "If you want to look at me - pay me overtime!",
+            morning: `Welcome ! Only ${remainingTime} left to break!`,
+            breakTime: `Eat fast! ${remainingTime} left to end of dinner!`,
+            endWork: `Almost done! ${remainingTime} left to the end of torment!`,
+            freeTime: "Go home, it is late...",
         };
         return captions[eventName]
     }

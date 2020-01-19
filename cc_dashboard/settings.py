@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -110,6 +110,8 @@ CRON_CLASSES = [
     "cc_github.cron.GetWeeklyStatistic",
     "cc_github.cron.GetTotalStatistic",
 ]
+
+DJANGO_CRON_DELETE_LOGS_OLDER_THAN = 14
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators

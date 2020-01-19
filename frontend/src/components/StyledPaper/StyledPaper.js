@@ -17,7 +17,7 @@ const styledPaper = Component => {
         root: {
             backgroundColor: props => props.backgroundColor,
             height: window.innerHeight,
-            paddingTop: "5%"
+            paddingTop: "10px"
         }
     });
 

@@ -28,7 +28,7 @@ export default function WelcomePart() {
             <p>Create repository on Github. Copy link to your repository - it should look like this:</p>
             <p>https://github.com/YOUR GITHUB LOGIN/YOUR PROJECT TITLE</p>
             <p>Create plan. Use Trello, Google Spreadsheet or other online tool.</p>
-            <p>Send information through form below. Refresh page to see your data.</p>
+            <p>Send information through form below.</p>
         </Card.Body>
     </React.Fragment>
 

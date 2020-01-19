@@ -7,4 +7,4 @@ class CelebrantAdmin(admin.ModelAdmin):
     fields = ("first_name", "last_name", "exam", "pass_date")
 
 
-admin.site.register(Celebrant)
+admin.site.register(Celebrant, CelebrantAdmin)

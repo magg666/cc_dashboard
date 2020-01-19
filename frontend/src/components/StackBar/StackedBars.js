@@ -1,5 +1,7 @@
 import React from 'react';
 import Chart from 'react-apexcharts'
+import styledPaper from "../StyledPaper/StyledPaper";
+import {Title} from "../Title/Title";
 
 /**
  * Set of stacked bars for weekly projects statistics. Combines independent bars into graph.
@@ -20,20 +22,20 @@ export class StackedBars extends React.Component {
             }
         }
         return counter
-
     }
 
     render() {
         if (this.props.data.length !== 0) {
             let counter = this.countActiveProjects(this.props.data);
-            return (
-                this.props.data.map((obj, index) => {
-                    if (obj.users.length !== 0) {
-                        return <BarChart key={index} data={obj} amount={counter}/>
-                    } else {
-                        return null
-                    }
-                })
+            return (<React.Fragment>
+                    <Title title={this.props.title}/>
+                    {this.props.data.map((obj, index) => {
+                        if (obj.users.length !== 0) {
+                            return <BarChart key={index} data={obj} amount={counter}/>
+                        } else {
+                            return null
+                        }
+                    })}</React.Fragment>
             )
         } else {
             return null
@@ -55,7 +57,7 @@ class BarChart extends React.Component {
 
                 chart: {
                     stacked: true,
-                    height: ((0.9 * window.innerHeight) / this.props.amount) - 24,
+                    height: ((0.9 * window.innerHeight) / this.props.amount) - 34, // 34 = h2 (24px + 10px paper padding)
                     background: "#000",
                     fontFamily: 'Roboto, sans-serif',
                 },
@@ -181,4 +183,4 @@ class BarChart extends React.Component {
     }
 }
 
-
+export const StyledGithubWeeklyChart = styledPaper(StackedBars);

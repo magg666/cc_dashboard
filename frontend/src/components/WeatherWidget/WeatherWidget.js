@@ -65,7 +65,7 @@ class WeatherWidget extends React.Component {
         this.getCurrentWeather();
         this.timer = setInterval(() => {
             this.getCurrentWeather();
-        }, 60000)
+        }, 300000) // refresh every 5 minutes
 
     }
 

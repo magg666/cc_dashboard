@@ -1,5 +1,7 @@
 import React from 'react';
 import Chart from 'react-apexcharts'
+import {Title} from "../Title/Title";
+import styledPaper from "../StyledPaper/StyledPaper";
 
 /**
  * Column graph for total projects statistic in each module.
@@ -9,7 +11,7 @@ import Chart from 'react-apexcharts'
  * Documentation: https://apexcharts.com/react-chart-demos/mixed-charts/line-column/
  */
 
-export default class BarChart extends React.Component {
+class BarChart extends React.Component {
     constructor(props) {
         super(props);
 
@@ -34,7 +36,7 @@ export default class BarChart extends React.Component {
 
             options: {
                 chart: {
-                    height: 0.95*window.innerHeight -24,
+                    height: 0.90 * window.innerHeight - 34, // 34 = h2 (24px + 10px paper padding)
                     width: "100%",
                     type: "line",
                     stacked: false,
@@ -56,7 +58,7 @@ export default class BarChart extends React.Component {
                 colors: ['#c21bb3', '#edba4d', '#3ce6f4'],
 
                 stroke: {
-                    width: [4, 4, 4]
+                    width: 4
                 },
 
                 markers: {
@@ -83,6 +85,11 @@ export default class BarChart extends React.Component {
                         hideOverlappingLabels: false,
                         rotate: 0,
                         rotateAlways: false,
+                        style: {
+                            colors: '#ffffff',
+                            fontSize: '16px',
+                            fontFamily: 'Roboto sans-serif',
+                        },
 
                     }
                 },
@@ -96,7 +103,12 @@ export default class BarChart extends React.Component {
                             show: true,
                         },
                         title: {
-                            text: "Changes of code's lines"
+                            text: "Changes of code's lines",
+                            style: {
+                                colors: '#ffffff',
+                                fontSize: '16px',
+                                fontFamily: 'Roboto sans-serif',
+                            },
                         }
                     },
                     {
@@ -112,8 +124,14 @@ export default class BarChart extends React.Component {
                             show: true,
                         },
                         title: {
-                            text: "Commits"
-                        }
+                            text: "Commits",
+                            style: {
+                                colors: '#ffffff',
+                                fontSize: '16px',
+                                fontFamily: 'Roboto sans-serif',
+                            },
+                        },
+
                     }
                 ],
                 tooltip: {
@@ -130,7 +148,7 @@ export default class BarChart extends React.Component {
                 grid: {
                     padding: {
                         left: -80,
-                        right: 80
+                        right: -80,
                     }
                 }
             }
@@ -138,11 +156,15 @@ export default class BarChart extends React.Component {
     }
 
     render() {
-        return (
+        return (<React.Fragment>
+                <Title title={this.props.title}/>
                 <div id="chart">
                     <Chart options={this.state.options} series={this.state.series} type="bar"
                            height={this.state.options.chart.height}/>
                 </div>
+            </React.Fragment>
         )
     }
 }
+
+export const StyledColumnBar = styledPaper(BarChart);

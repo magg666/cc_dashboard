@@ -1,9 +1,7 @@
 import os
-from django.shortcuts import render
 from .serializers import CalendarSerializer
 from rest_framework import viewsets
-from rest_framework.response import Response
-from .tasks import format_calendar_data, get_data_from_calendar
+from .tasks import get_data_from_calendar
 
 
 class CalendarEventsViewSet(viewsets.ModelViewSet):

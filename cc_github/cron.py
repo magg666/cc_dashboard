@@ -6,6 +6,9 @@ from cc_github.utils import get_github_statistics
 
 
 class GetWeeklyStatistic(CronJobBase):
+    """
+    Scheduled job to get data from github
+    """
     RUN_EVERY_MINS = 1
 
     schedule = Schedule(run_every_mins=RUN_EVERY_MINS)
@@ -28,7 +31,6 @@ class GetWeeklyStatistic(CronJobBase):
                 additions = data['weeks'][last_week_index]['a']
                 deletions = data['weeks'][last_week_index]['d']
                 commits = data['weeks'][last_week_index]['c']
-                print(data)
 
                 WeeklyStatistic.objects.update_or_create(repository_id=repository_id,
                                                          contributor=contributor,
@@ -39,6 +41,9 @@ class GetWeeklyStatistic(CronJobBase):
 
 
 class GetTotalStatistic(CronJobBase):
+    """
+    Scheduled job to get data from github
+    """
     RUN_EVERY_MINS = 1
 
     schedule = Schedule(run_every_mins=RUN_EVERY_MINS)

@@ -33,24 +33,23 @@ const clockStyles = theme => ({
         display: "flex"
     },
     dayText: {
-        fontSize: "1.5em",
-        color: "#e59400",
+        fontSize: "1.6em",
+        color: "#e5e406",
         marginLeft: "20px",
         alignSelf: "center"
     },
     timeText: {
         fontSize: "2em",
-        color: "#e59400",
+        color: "#e5e406",
         marginLeft: "20px",
     },
     captionText: {
-        fontSize: "1.1em",
-        color: "#e59400",
+        fontSize: "1.4em",
+        color: "#e5e406",
         marginRight: "20px",
         alignSelf: "center"
 
     },
-
 
 });
 

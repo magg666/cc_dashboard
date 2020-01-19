@@ -29,6 +29,12 @@ const celebrationStyles = makeStyles({
         fontSize: '24px',
         textAlign: 'center',
         color: 'white',
+        paddingTop: '10px'
+    },
+    noList: {
+        textAlign: 'center',
+        color: 'white',
+        padding: '20px'
     },
     item: {
         backgroundColor: 'black',
@@ -53,7 +59,7 @@ export const Celebration = () => {
                 setStudents(result.data);
             };
             fetchData().catch(err => console.log(err));
-        },60000);
+        }, 60000);
         return () => clearInterval(interval);
     }, []);
 
@@ -92,14 +98,24 @@ export const Celebration = () => {
     });
 
     const classes = celebrationStyles();
-    return <React.Fragment>
-        <Title title={"SUCCESSES"}/>
-        <ListGroup className={classes.list}>
-            {students.map((value, index) => {
-                return celebrationOptions(value, index)
-            })}
-        </ListGroup>
-    </React.Fragment>
+    if (students.length > 0) {
+        return <React.Fragment>
+            <Title title={"THIS WEEK SUCCESSES"}/>
+            <ListGroup className={classes.list}>
+                {students.map((value, index) => {
+                    return celebrationOptions(value, index)
+                })}
+            </ListGroup>
+        </React.Fragment>
+    } else {
+        return <React.Fragment>
+            <Title title={"YOU ARE AWESOME!"}/>
+            <h2 className={classes.noList}>Even the smallest of jobs well done will take you one step closer
+                towards the success that you have dreamed about.</h2>
+            <h2 className={classes.noList}> Keep it up.</h2>
+        </React.Fragment>
+    }
+
 
 };
 
