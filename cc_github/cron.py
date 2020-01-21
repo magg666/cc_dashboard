@@ -22,7 +22,9 @@ class GetWeeklyStatistic(CronJobBase):
         """
         repositories_data = get_github_statistics()
         last_week_index = -1
+
         for repository in repositories_data:
+
             if repository:
                 for data in repository:
 
